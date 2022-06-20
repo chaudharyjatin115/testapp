@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:future_button/future_button.dart';
+// import 'package:future_button/future_button.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:myknott/Config/CustomColors.dart';
@@ -207,88 +207,88 @@ class _OrderScreenState extends State<OrderScreen>
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      FutureFlatButton(
-                                        disabledColor: Colors.yellow,
-                                        progressIndicatorBuilder: (context) =>
-                                            SizedBox(
-                                          height: 17,
-                                          width: 17,
-                                          child: Center(
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                Colors.black.withOpacity(0.5),
-                                              ),
-                                              strokeWidth: 2,
-                                            ),
-                                          ),
-                                        ),
-                                        onPressed: () async {
-                                          await NotaryServices().declineNotary(
-                                              widget.notaryId, widget.orderId);
-                                          Navigator.of(context).pop(false);
-                                        },
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(5),
-                                        ),
-                                        color: Colors.yellow,
-                                        child: Text(
-                                          "Reject",
-                                          style: TextStyle(
-                                              color:
-                                                  Colors.black.withOpacity(1),
-                                              fontSize: 15.5,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                      FutureFlatButton(
-                                        disabledColor: blueColor,
-                                        progressIndicatorBuilder: (context) =>
-                                            SizedBox(
-                                          height: 17,
-                                          width: 17,
-                                          child: Center(
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                Colors.white,
-                                              ),
-                                              strokeWidth: 2,
-                                            ),
-                                          ),
-                                        ),
-                                        onPressed: () async {
-                                          bool success = await NotaryServices()
-                                              .acceptNotary(widget.notaryId,
-                                                  widget.orderId);
-                                          Fluttertoast.showToast(
-                                              msg: success
-                                                  ? "Order accepted."
-                                                  : "Can't accept order now.",
-                                              backgroundColor: blueColor,
-                                              fontSize: 16,
-                                              textColor: Colors.white,
-                                              gravity: ToastGravity.SNACKBAR);
-                                          if (success) {
-                                            setState(() {
-                                              isPending = false;
-                                            });
-                                          }
-                                        },
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(5),
-                                        ),
-                                        color: blueColor,
-                                        child: Text(
-                                          "Accept",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15.5,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      )
+                                      //     FutureFlatButton(
+                                      //       disabledColor: Colors.yellow,
+                                      //       progressIndicatorBuilder: (context) =>
+                                      //           SizedBox(
+                                      //         height: 17,
+                                      //         width: 17,
+                                      //         child: Center(
+                                      //           child: CircularProgressIndicator(
+                                      //             valueColor:
+                                      //                 AlwaysStoppedAnimation<Color>(
+                                      //               Colors.black.withOpacity(0.5),
+                                      //             ),
+                                      //             strokeWidth: 2,
+                                      //           ),
+                                      //         ),
+                                      //       ),
+                                      //       onPressed: () async {
+                                      //         await NotaryServices().declineNotary(
+                                      //             widget.notaryId, widget.orderId);
+                                      //         Navigator.of(context).pop(false);
+                                      //       },
+                                      //       shape: RoundedRectangleBorder(
+                                      //         borderRadius:
+                                      //             BorderRadius.circular(5),
+                                      //       ),
+                                      //       color: Colors.yellow,
+                                      //       child: Text(
+                                      //         "Reject",
+                                      //         style: TextStyle(
+                                      //             color:
+                                      //                 Colors.black.withOpacity(1),
+                                      //             fontSize: 15.5,
+                                      //             fontWeight: FontWeight.bold),
+                                      //       ),
+                                      //     ),
+                                      //     FutureFlatButton(
+                                      //       disabledColor: blueColor,
+                                      //       progressIndicatorBuilder: (context) =>
+                                      //           SizedBox(
+                                      //         height: 17,
+                                      //         width: 17,
+                                      //         child: Center(
+                                      //           child: CircularProgressIndicator(
+                                      //             valueColor:
+                                      //                 AlwaysStoppedAnimation<Color>(
+                                      //               Colors.white,
+                                      //             ),
+                                      //             strokeWidth: 2,
+                                      //           ),
+                                      //         ),
+                                      //       ),
+                                      //       onPressed: () async {
+                                      //         bool success = await NotaryServices()
+                                      //             .acceptNotary(widget.notaryId,
+                                      //                 widget.orderId);
+                                      //         Fluttertoast.showToast(
+                                      //             msg: success
+                                      //                 ? "Order accepted."
+                                      //                 : "Can't accept order now.",
+                                      //             backgroundColor: blueColor,
+                                      //             fontSize: 16,
+                                      //             textColor: Colors.white,
+                                      //             gravity: ToastGravity.SNACKBAR);
+                                      //         if (success) {
+                                      //           setState(() {
+                                      //             isPending = false;
+                                      //           });
+                                      //         }
+                                      //       },
+                                      //       shape: RoundedRectangleBorder(
+                                      //         borderRadius:
+                                      //             BorderRadius.circular(5),
+                                      //       ),
+                                      //       color: blueColor,
+                                      //       child: Text(
+                                      //         "Accept",
+                                      //         style: TextStyle(
+                                      //             color: Colors.white,
+                                      //             fontSize: 15.5,
+                                      //             fontWeight: FontWeight.bold),
+                                      //       ),
+                                      //     )
                                     ],
                                   )
                                 : Container(),
@@ -643,10 +643,13 @@ class _OrderScreenState extends State<OrderScreen>
                     ),
                   ),
             orders.isNotEmpty
-                ? ChatScreen(
-                    notaryId: widget.notaryId,
-                    chatRoom: orders['order']['chatroom'],
-                  )
+                ?
+
+                //ChatScreen(
+                //     notaryId: widget.notaryId,
+                //     chatRoom: orders['order']['chatroom'],
+                //   )
+                Container()
                 : Container(),
             orders.isNotEmpty
                 ? DocumentScreen(
